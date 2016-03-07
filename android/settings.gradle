@@ -1,0 +1,3 @@
+rootProject.name = 'BetterNote2'
+
+include ':app'
