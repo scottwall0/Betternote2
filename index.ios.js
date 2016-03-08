@@ -36,7 +36,7 @@ var NavigationBarRouteMapper = {
       <TouchableOpacity onPress={() => navigator.pop()}>
         <Image
           style={styles.previousButton}
-          source={require('./Components/Images/BackButtonIcon.png')}
+          source={require('./Components/Images/BackButton.png')}
         />
       </TouchableOpacity>
     );
@@ -47,20 +47,23 @@ var NavigationBarRouteMapper = {
       <TouchableOpacity>
         <Image
           style={styles.composeButton}
-          source={require('./Components/Images/ComposeNoteIcon.png')}
+          source={require('./Components/Images/ComposeNote.png')}
         />
-        </TouchableOpacity>
+      </TouchableOpacity>
     );
   },
 
   Title: function(route, navigator, index, navState) {
     return (
-      <TouchableOpacity>
-        <Image
-          style={styles.titleIcon}
-          source={require('./Components/Images/BetternoteLogo.png')}
-        />
-      </TouchableOpacity>
+        <View  style={styles.navBarTitleContainer}>
+          <Image
+            style={styles.titleIcon}
+            source={require('./Components/Images/GeometricLogo.png')}
+          />
+          <Text style={styles.navBarText}>
+            | Notebooks
+          </Text>
+        </View>
     );
   },
 
@@ -118,10 +121,10 @@ var styles = StyleSheet.create({
     margin: 10,
   },
   previousButton: {
-    height: 15,
+    height: 20,
     width: 15,
     marginLeft: 25,
-    paddingTop: 30,
+    marginTop:  15,
   },
   welcome: {
     fontSize: 50,
@@ -133,30 +136,37 @@ var styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  navBarTitleContainer: {
+    flexDirection: 'row',
+  },
   navBarTitleText: {
     color: 'black',
     fontWeight: '500',
     marginVertical: 9,
   },
   navBarText: {
+    marginTop: 16,
+    letterSpacing: 1,
+    marginLeft: 5,
     fontSize: 16,
+    fontWeight: 'bold',
     marginVertical: 10,
   },
   ListStyling: {
     paddingTop: 90,
   },
   composeButton: {
-    height: 35,
-    width: 35,
+    height: 20,
+    width: 20,
     marginRight: 25,
-    marginTop: 10,
-    tintColor: 'red',
+    marginTop: 15,
+    tintColor: 'black',
   },
   titleIcon: {
-    height: 35,
-    width: 35,
-    marginTop: 10,
-    tintColor: 'red',
+    height: 30,
+    width: 30,
+    marginTop: 11,
+    tintColor: 'black',
   },
 
 });
