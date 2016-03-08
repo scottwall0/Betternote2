@@ -1,4 +1,4 @@
-
+var Notelist = require('../Note/NoteList')
 
 'use strict';
 import React, {

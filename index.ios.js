@@ -14,7 +14,9 @@ import React, {
   Navigator,
   ListView,
   TouchableHighlight,
+  TouchableOpacity,
   Text,
+  Image,
   View
 } from 'react-native';
 
@@ -30,18 +32,35 @@ var NavigationBarRouteMapper = {
     }
 
     var previousRoute = navState.routeStack[index - 1];
-    return null;
+    return (
+      <TouchableOpacity onPress={() => navigator.pop()}>
+        <Image
+          style={styles.previousButton}
+          source={require('./Components/Images/BackButtonIcon.png')}
+        />
+      </TouchableOpacity>
+    );
   },
 
   RightButton: function(route, navigator, index, navState) {
-    return null;
+    return (
+      <TouchableOpacity>
+        <Image
+          style={styles.composeButton}
+          source={require('./Components/Images/ComposeNoteIcon.png')}
+        />
+        </TouchableOpacity>
+    );
   },
 
   Title: function(route, navigator, index, navState) {
     return (
-      <Text style={[styles.navBarText, styles.navBarTitleText]}>
-        This is a test
-      </Text>
+      <TouchableOpacity>
+        <Image
+          style={styles.titleIcon}
+          source={require('./Components/Images/BetternoteLogo.png')}
+        />
+      </TouchableOpacity>
     );
   },
 
@@ -88,15 +107,21 @@ var styles = StyleSheet.create({
     padding: 10,
   },
   navBar: {
-    backgroundColor: 'blue',
+    backgroundColor: 'white',
   },
   NotebookTitle: {
     fontWeight: 'bold',
     letterSpacing: 0.5,
-    marginLeft: 50,
+    marginLeft: 500,
     fontSize: 17,
     textAlign: 'center',
     margin: 10,
+  },
+  previousButton: {
+    height: 15,
+    width: 15,
+    marginLeft: 25,
+    paddingTop: 30,
   },
   welcome: {
     fontSize: 50,
@@ -109,7 +134,7 @@ var styles = StyleSheet.create({
     marginBottom: 5,
   },
   navBarTitleText: {
-    color: 'blue',
+    color: 'black',
     fontWeight: '500',
     marginVertical: 9,
   },
@@ -120,6 +145,20 @@ var styles = StyleSheet.create({
   ListStyling: {
     paddingTop: 90,
   },
+  composeButton: {
+    height: 35,
+    width: 35,
+    marginRight: 25,
+    marginTop: 10,
+    tintColor: 'red',
+  },
+  titleIcon: {
+    height: 35,
+    width: 35,
+    marginTop: 10,
+    tintColor: 'red',
+  },
+
 });
 
 AppRegistry.registerComponent('BetterNote2', () => BetterNote2);
