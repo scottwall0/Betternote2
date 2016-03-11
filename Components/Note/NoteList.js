@@ -46,7 +46,7 @@ class NoteList extends React.Component {
                 {note.title}
               </Text>
               <Text style={styles.NoteText} numberOfLines={3}>
-                {note.body}
+                test
               </Text>
             </View>
           </View>

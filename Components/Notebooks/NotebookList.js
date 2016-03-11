@@ -66,7 +66,6 @@ class NotebookList extends React.Component {
   goToNoteList(notebook) {
     this.props.navigator.push({
       component: Notelist,
-      title: notebook.name + " " + "Notes",
       props: {notes: notebook.notes},
     });
   }

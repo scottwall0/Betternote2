@@ -5,6 +5,7 @@
 
 var NotebookList = require('./Components/Notebooks/NotebookList');
 var NoteList = require('./Components/Note/NoteList');
+var NewNote = require('./Components/Note/NewNote');
 
 'use strict';
 import React, {
@@ -17,6 +18,7 @@ import React, {
   TouchableOpacity,
   Text,
   Image,
+  Modal,  
   View
 } from 'react-native';
 
@@ -80,7 +82,8 @@ class BetterNote2 extends Component {
         return ( <NotebookList navigator={nav}/> );
       case 'notelist':
         return ( <NoteList navigator={nav} {...route.props}/> );
-
+      case 'newNote':
+        return (<NewNote navigator={nav} />);
     }
   }
 
@@ -100,6 +103,8 @@ class BetterNote2 extends Component {
     );
   }
 }
+
+/*Style information here*/
 
 var styles = StyleSheet.create({
   container: {
@@ -150,7 +155,8 @@ var styles = StyleSheet.create({
     marginLeft: 5,
     fontSize: 16,
     fontWeight: 'bold',
-    marginVertical: 10,
+    marginVertical: 9,
+    color: '#34495e',
   },
   ListStyling: {
     paddingTop: 90,
@@ -160,13 +166,13 @@ var styles = StyleSheet.create({
     width: 20,
     marginRight: 25,
     marginTop: 15,
-    tintColor: 'black',
+    tintColor: '#34495e',
   },
   titleIcon: {
     height: 30,
     width: 30,
-    marginTop: 11,
-    tintColor: 'black',
+    marginTop: 10,
+    tintColor: '#34495e',
   },
 
 });
